@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# React Frontend with TailwindCSS, Tanstack React Query, Axios, and Redux Toolkit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a starter template for a React frontend application using TailwindCSS for styling, Tanstack React Query for data fetching, Axios for HTTP requests, and Redux Toolkit for state management.
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+- Node.js
+- npm or yarn
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/RAJ-SUDHARSHAN/React_Starter_Template.git
+    cd React_Starter_Template
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Install dependencies**:
+    ```sh
+    npm install
+    # or if you use yarn
+    yarn install
+    ```
 
-### `npm test`
+3. **Set up environment variables**:
+    Create a `.env` file in the project root and add the following variable:
+    ```env
+    REACT_APP_BASE_URL=http://localhost:8000
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running the Application
 
-### `npm run build`
+1. **Start the React application**:
+    ```sh
+    npm start
+    # or if you use yarn
+    yarn start
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    The application will be available at `http://localhost:3000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Files
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `public/`
 
-### `npm run eject`
+Contains the static assets for the project, including `index.html`, icons, and manifest files.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `src/`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contains the main source code for the React application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **`App.js`**: The main component that sets up routing and React Query.
+- **`api/`**: Contains the API setup and endpoints.
+    - **`index.js`**: Configures Axios with the base URL.
+    - **`testAPI.js`**: Contains a sample API function to fetch data from the backend.
+- **`components/`**: Directory for reusable components.
+- **`containers/`**: Directory for container components.
+    - **`TestPage/`**: A sample container component for testing API integration.
+- **`index.css`**: Main CSS file that includes TailwindCSS imports.
+- **`index.js`**: Entry point of the application.
+- **`tailwind.config.js`**: Configuration file for TailwindCSS.
+### Example Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To test the sample API, you can use the following endpoint:
 
-## Learn More
+- **GET `/api/v1/test_table`**: Retrieves all entries from the `test_table`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Testing the Application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Set up and run the backend**:
+    For the backend setup, please refer to the [FastAPI Starter Template](https://github.com/RAJ-SUDHARSHAN/FastAPI_Starter_Template) and follow the instructions provided in its README.
 
-### Code Splitting
+2. **Start the frontend application**:
+    ```sh
+    npm start
+    # or if you use yarn
+    yarn start
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Test the application**:
+    After starting both the backend and frontend applications, go to `http://localhost:3000/test` in your browser. You should see the data fetched from the backend displayed in a table format.
 
-### Analyzing the Bundle Size
+## Additional Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This template uses TailwindCSS for styling and is configured with the `tailwind.config.js` file. React Query is set up in `App.js` with a `QueryClientProvider`. Axios is configured in `api/index.js` to handle HTTP requests to the backend.
 
-### Making a Progressive Web App
+### TailwindCSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+TailwindCSS is a utility-first CSS framework. The configuration file (`tailwind.config.js`) allows customization of the default styles and themes.
 
-### Advanced Configuration
+### Tanstack React Query
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+React Query is a powerful data-fetching library that simplifies server-state management in React applications. It is set up in `App.js` with a `QueryClientProvider`.
 
-### Deployment
+### Axios
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Axios is used for making HTTP requests. The configuration in `api/index.js` sets up the base URL for the backend API.
